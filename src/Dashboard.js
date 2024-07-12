@@ -9,7 +9,7 @@ import { useMemo } from 'react';
 export default function Dashboard() {
 
     //SAT scores for each subject. Updating these will update PerformanceTracker and ScoreDistribution
-    const [scores, setScores] = React.useState({
+    const [scores, ] = React.useState({
         math: 300,
         reading: 100,
         writing: 100
