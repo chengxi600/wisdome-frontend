@@ -2,7 +2,6 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ReferenceLine, ReferenceD
 
 export default function DistributionAreaChart({
   data,
-  aspect = 2,
   color = "#000000",
   totalScore = 0,
   xTicks,
@@ -14,7 +13,7 @@ export default function DistributionAreaChart({
 }) {
 
   return (
-    <ResponsiveContainer height="100%" width="100%" aspect={aspect}>
+    <ResponsiveContainer height="100%" width="100%" minWidth='0px' minHeight='250px'>
       <AreaChart
         data={data}
         margin={{

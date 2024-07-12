@@ -1,18 +1,7 @@
 import { Typography, Box } from '@mui/material';
-import { styled } from '@mui/system';
 import PerformanceBar from './PerformanceBar';
 import Divider from "@mui/material/Divider";
-
-const StyledBox = styled('Box')(() => ({
-  display: 'flex',
-  flex: '1 1 0%',
-  padding: '1.25rem',
-  height: '100%',
-  width: '100%',
-  borderRadius: '20px',
-  backgroundColor: 'rgb(246 248 248)',
-  boxShadow: '0px 0px 4px 0px #856fc2',
-}));
+import { StyledBox } from '../util';
 
 export default function PerformanceTracker({
   scores = {
@@ -23,13 +12,14 @@ export default function PerformanceTracker({
 }) {
 
   return (
-    <StyledBox>
+    <StyledBox sx={{ paddingBottom: { xs: '2.5rem', lg: '1.25rem' } }}>
       <Box
         gap='3dvh'
         justifyContent='flex-start'
         alignItems='flex-start'
         flexDirection='column'
         display='flex'
+        width='100%'
       >
         <Box
           display='flex'
@@ -58,26 +48,22 @@ export default function PerformanceTracker({
             minValue={200} 
             maxValue={800} 
             score={scores.math} 
-            mb='2rem'
           />
-          <Divider sx={{ borderStyle: 'dashed', borderWidth: '1px', width: '100%' }} />
+          <Divider sx={{ borderStyle: 'dashed', borderWidth: '1px', width: '100%', height: '.5px', mt: '2rem', mb: '2rem'}} />
           <PerformanceBar 
             subject='Reading' 
             minValue={100} 
             maxValue={400} 
             score={scores.reading} 
-            mt='2rem' 
-            mb='2rem'
           />
-          <Divider sx={{ borderStyle: 'dashed', borderWidth: '1px', width: '100%' }} />
+          <Divider sx={{ borderStyle: 'dashed', borderWidth: '1px', width: '100%', height: '.5px', mt: '2rem', mb: '2rem'}} />
           <PerformanceBar 
             subject='Writing' 
             minValue={100} 
             maxValue={400} 
             score={scores.writing} 
-            mt='2rem' 
-            mb='2rem'
           />
+          <Divider sx={{ border: 'none', borderWidth: '1px', width: '100%', height: '.5px', mt: '2rem', mb: '2rem'}} />
         </Box>
       </Box>
     </StyledBox>

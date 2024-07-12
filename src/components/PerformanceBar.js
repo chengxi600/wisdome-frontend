@@ -37,7 +37,7 @@ export default function PerformanceBar({
     >
       <Typography width='25%' noWrap>{subject}</Typography>
       <Box width='60%' position='relative'>
-        <StyledProgressBar variant='determinate' value={(score / maxValue) * 100} />
+        <StyledProgressBar variant='determinate' value={((score-minValue) / (maxValue-minValue)) * 100 + 5} />
         <Typography
           position='absolute'
           left='0'
